@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enhanced Linktree</title>
+    <style>
+        :root {
+            --bg-color: #021526;
+            --text-color: #ffffff;
+            --secondary-text-color: #b0a4a4;
+            --link-bg-color: #222831;
+            --button-bg-color: #f8ede3;
+            --button-text-color: #021526;
+            --button-hover-color: #e8d8c3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 393px;
+            padding: 67px 33px;
+            gap: 32px;
+            background-color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 0;
+            color: var(--secondary-text-color);
+            line-height: 1.5;
+        }
+
+        .about-me {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .about-me::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--button-bg-color);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--link-bg-color);
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .link-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-item img {
+            width: 48px;
+            height: 48px;
+            margin-right: 16px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .link-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .link-description {
+            font-size: 14px;
+            color: var(--secondary-text-color);
+        }
+
+        .meeting-section {
+            background-color: var(--link-bg-color);
+            padding: 28px;
+            border-radius: 12px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .meeting-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .meeting-description {
+            font-size: 16px;
+            color: var(--secondary-text-color);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            border: none;
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            outline: none;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover-color);
+            transform: translateY(-2px);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .link-item {
+                padding: 12px;
+            }
+
+            .link-item img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .link-title {
+                font-size: 16px;
+            }
+
+            .link-description {
+                font-size: 12px;
+            }
+
+            .meeting-section {
+                padding: 24px;
+            }
+
+            .meeting-title {
+                font-size: 20px;
+            }
+
+            .meeting-description {
+                font-size: 14px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-image">
+            <img src="sunset.png" alt="Profile Image">
+        </div>
+        <div class="header">
+            <h1>Lorem Ipsum</h1>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Condimentum maximus aptent rutrum mauris tempus tempor mollis tellus.</p>
+        </div>
+        <div class="about-me">About me</div>
+        <div class="links">
+            <a href="#" class="link-item" aria-label="Instagram profile">
+                <img src="sunset.png" alt="Instagram icon">
+                <div class="link-text">
+                    <span class="link-title">Instagram</span>
+                    <span class="link-description">Follow my photography journey</span>
+                </div>
+            </a>
+            <a href="#" class="link-item" aria-label="LinkedIn profile">
+                <img src="sunset.png" alt="LinkedIn icon">
+                <div class="link-text">
+                    <span class="link-title">LinkedIn</span>
+                    <span class="link-description">Connect with me professionally</span>
+                </div>
+            </a>
+            <a href="#" class="link-item" aria-label="My properties">
+                <img src="sunset.png" alt="Properties icon">
+                <div class="link-text">
+                    <span class="link-title">My properties</span>
+                    <span class="link-description">Check out my real estate listings</span>
+                </div>
+            </a>
+            <a href="#" class="link-item" aria-label="Send me a message">
+                <img src="sunset.png" alt="Message icon">
+                <div class="link-text">
+                    <span class="link-title">Send me a message</span>
+                    <span class="link-description">Get in touch directly</span>
+                </div>
+            </a>
+        </div>
+        <div class="meeting-section">
+            <div class="meeting-title">Propose a meeting</div>
+            <div class="meeting-description">Interested in working together? Let's set up a time to chat about your project.</div>
+            <button class="cta-button">Schedule a Call</button>
+        </div>
+    </div>
+</body>
+</html>
